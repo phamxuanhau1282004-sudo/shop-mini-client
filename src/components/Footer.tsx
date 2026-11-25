@@ -6,11 +6,11 @@ export default function Footer() {
         <div className="container">
   
           <p>
-            © {year} ShopMini · Bài tập môn Công nghệ lập trình hiện đại
+            © {year} ShopPXH · Bài tập môn Công nghệ lập trình hiện đại
           </p>
   
           <p>
-            Hotline: 0389553698 · Email: hotro@shopmini.vn
+            Hotline: 0389553698 · Email: hotro@shoppxh.vn
           </p>
   
         </div>

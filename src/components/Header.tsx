@@ -4,7 +4,7 @@ export default function Header() {
         <div className="container header-inner">
   
           <a href="/" className="logo">
-            Shop<span> Phạm Xuân Hậu</span>
+            Shop<span> PXH</span>
           </a>
   
           <nav className="nav">
