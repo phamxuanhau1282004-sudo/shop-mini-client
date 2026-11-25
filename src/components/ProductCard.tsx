@@ -22,7 +22,16 @@ export default function ProductCard({ product }: Props) {
           {product.price.toLocaleString("vi-VN")} đ
         </p>
 
-        <button className="btn">
+        {product.stock === 0 && (
+          <span className="out-of-stock">
+            Hết hàng
+          </span>
+        )}
+
+        <button
+          className="btn"
+          disabled={product.stock === 0}
+        >
           Thêm vào giỏ
         </button>
 
