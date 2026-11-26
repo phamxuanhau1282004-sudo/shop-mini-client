@@ -13,9 +13,11 @@ import type { CartItem } from "../src/utils/cart.ts";
 import { formatPrice } from "../src/utils/format.ts";
 
 import {
-  filterProducts,
-  getCategories
-} from "../src/utils/product.ts";
+    filterProducts,
+    getCategories,
+    searchByPriceRange,
+    groupByCategory
+  } from "../src/utils/product.ts";
 
 // Tìm sản phẩm theo ID
 const aoThun = products.find((p) => p.id === 1);
@@ -74,3 +76,18 @@ console.log(
     maxPrice: 300000
   }).map((p) => p.name)
 );
+// Bài tập về nhà 1
+console.log(
+    "Sản phẩm từ 100k đến 300k:",
+    searchByPriceRange(
+      products,
+      100000,
+      300000
+    ).map((p) => p.name)
+  );
+  
+  // Bài tập về nhà 2
+  console.log(
+    "Số sản phẩm theo danh mục:",
+    groupByCategory(products)
+  );

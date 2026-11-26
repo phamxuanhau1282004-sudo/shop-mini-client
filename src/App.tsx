@@ -10,14 +10,21 @@ import { filterProducts } from "./utils/product";
 import "./App.css";
 
 function App() {
+  // Sản phẩm giá tối đa 300.000 đ
   const cheapProducts = filterProducts(products, {
     maxPrice: 300000,
     sort: "asc"
   });
 
+  // Sản phẩm điện tử
   const electronics = filterProducts(products, {
     category: "Điện tử"
   });
+
+  // Sản phẩm sắp hết hàng
+  const lowStockProducts = products.filter(
+    (p) => p.stock >= 1 && p.stock <= 5
+  );
 
   return (
     <>
@@ -44,6 +51,11 @@ function App() {
           <ProductList
             title="Đồ điện tử"
             items={electronics}
+          />
+
+          <ProductList
+            title="Sản phẩm sắp hết hàng"
+            items={lowStockProducts}
           />
 
         </div>

@@ -48,3 +48,27 @@ export function filterProducts(
 
   return result;
 }
+export function searchByPriceRange(
+    products: Product[],
+    min: number,
+    max: number
+  ): Product[] {
+    return products.filter(
+      (p) => p.price >= min && p.price <= max
+    );
+}
+export function groupByCategory(
+    products: Product[]
+  ): Record<string, number> {
+    return products.reduce<Record<string, number>>(
+      (acc, product) => {
+  
+        const category = product.category;
+  
+        acc[category] = (acc[category] ?? 0) + 1;
+  
+        return acc;
+      },
+      {}
+    );
+}
