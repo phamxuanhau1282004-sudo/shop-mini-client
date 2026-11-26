@@ -1,14 +1,20 @@
 import type { Product } from "../data/products";
+import { formatPrice } from "../utils/format";
 
 type Props = {
   product: Product;
 };
 
 export default function ProductCard({ product }: Props) {
+  const outOfStock = product.stock === 0;
+
   return (
     <div className="product-card">
 
-      <img src={product.image} alt={product.name} />
+      <img
+        src={product.image}
+        alt={product.name}
+      />
 
       <div className="product-body">
 
@@ -19,18 +25,18 @@ export default function ProductCard({ product }: Props) {
         <h3>{product.name}</h3>
 
         <p className="product-price">
-          {product.price.toLocaleString("vi-VN")} đ
+          {formatPrice(product.price)}
         </p>
 
-        {product.stock === 0 && (
-          <span className="out-of-stock">
+        {outOfStock && (
+          <span className="badge-out">
             Hết hàng
           </span>
         )}
 
         <button
           className="btn"
-          disabled={product.stock === 0}
+          disabled={outOfStock}
         >
           Thêm vào giỏ
         </button>
