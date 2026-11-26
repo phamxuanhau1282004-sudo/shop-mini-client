@@ -6,15 +6,13 @@ type Props = {
 };
 
 export default function ProductCard({ product }: Props) {
-  const outOfStock = product.stock === 0;
+  const outOfStock = product.stock <= 0;
+  const lowStock = product.stock >= 1 && product.stock <= 5;
 
   return (
     <div className="product-card">
 
-      <img
-        src={product.image}
-        alt={product.name}
-      />
+      <img src={product.image} alt={product.name} />
 
       <div className="product-body">
 
@@ -28,17 +26,27 @@ export default function ProductCard({ product }: Props) {
           {formatPrice(product.price)}
         </p>
 
-        {outOfStock && (
+        {/* Trạng thái tồn kho */}
+        {outOfStock ? (
           <span className="badge-out">
             Hết hàng
           </span>
+        ) : lowStock ? (
+          <span className="badge-low">
+            Chỉ còn {product.stock} sản phẩm
+          </span>
+        ) : (
+          <span className="badge-in">
+            Còn hàng
+          </span>
         )}
 
+        {/* Khóa nút nếu hết hàng */}
         <button
           className="btn"
           disabled={outOfStock}
         >
-          Thêm vào giỏ
+          {outOfStock ? "Hết hàng" : "Thêm vào giỏ"}
         </button>
 
       </div>

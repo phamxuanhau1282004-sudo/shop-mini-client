@@ -1032,3 +1032,60 @@ main {
     gap: 32px;
   }
 }
+/* =========================================
+   TRẠNG THÁI TỒN KHO
+========================================= */
+
+/* Còn hàng */
+.badge-in {
+  display: inline-flex;
+  align-items: center;
+  background: #ecfdf5;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Sắp hết hàng */
+.badge-low {
+  display: inline-flex;
+  align-items: center;
+  background: #fff7ed;
+  color: #c2410c;
+  border: 1px solid #fed7aa;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Hết hàng */
+.badge-out {
+  display: inline-flex;
+  align-items: center;
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Khóa nút mua hàng */
+.btn:disabled,
+.btn:disabled:hover {
+  background: #e2e8f0;
+  color: #94a3b8;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Căn lại tiêu đề khu vực sản phẩm */
+.section-title {
+  text-align: left;
+}
